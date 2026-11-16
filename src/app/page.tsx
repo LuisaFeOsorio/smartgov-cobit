@@ -1,29 +1,26 @@
 import Link from "next/link";
-import { Section, Card, ValorList } from "@/components/Section";
-import { contexto } from "@/data/contexto";
-import { producto } from "@/data/producto";
-import { clientes } from "@/data/clientes";
-import { proyecto } from "@/data/proyecto";
+import { Section, Card } from "@/components/Section";
 import CtaFinal from "@/components/CtaFinal";
 
 export default function Home() {
   return (
     <>
-      <div className="hero hero-imagen">
-        <img src="/img/hero-principal.svg" alt="" className="hero-fondo" />
-        <div className="hero-contenido">
+      {/* Hero profesional: título en bloque azul, subtítulo en bloque blanco */}
+      <div className="hero-bloque">
+        <div className="hero-principal">
           <h1>
             Diagnósticos de gobierno de TI con <span>COBIT 2019</span> en horas,
             no en semanas
           </h1>
+        </div>
+        <div className="hero-sub">
           <p>
-            SmartGov COBIT combina inteligencia artificial y consultores expertos
-            para cerrar la brecha entre TI y las metas del negocio, con
-            trazabilidad total y control humano.
+            SmartGov COBIT combina inteligencia artificial y consultores
+            expertos. Pruébalo ahora mismo con datos de ejemplo, sin registro.
           </p>
           <div className="hero-cta">
             <Link href="/diagnostico" className="btn btn-solid">
-              Ver demo del diagnóstico
+              ▶ Probar la demo ahora
             </Link>
             <Link href="/producto" className="btn btn-borde">
               Conocer el producto
@@ -32,15 +29,16 @@ export default function Home() {
         </div>
       </div>
 
+      {/* La demo en 4 pasos: lo funcional, primero */}
       <Section
-        titulo="¿Cómo navegar esta plataforma?"
-        subtitulo="Un recorrido guiado en 4 pasos, con datos de ejemplo para que entiendas todo el flujo"
+        titulo="La demo en 4 pasos"
+        subtitulo="Del documento al plan de acción, todo dentro de la plataforma"
       >
         <div className="grid grid-4">
           <Card titulo="1 · Carga tus documentos">
             <ul>
               <li>Plan tecnológico, informes, actas y contratos</li>
-              <li><Link href="/diagnostico">Empezar aquí →</Link></li>
+              <li><Link href="/diagnostico"><strong>Empezar aquí →</strong></Link></li>
             </ul>
           </Card>
           <Card titulo="2 · La IA analiza">
@@ -64,125 +62,65 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section titulo="El método en un vistazo" subtitulo="Una jornada de tres fases, del análisis automático al acompañamiento continuo">
+      {/* El método, de un vistazo (visual, sin mucho texto) */}
+      <Section titulo="El método en un vistazo" subtitulo="La IA lee tus documentos; el experto valida y prioriza">
         <div className="img-par">
-          <img src="/img/fase-hoja-ruta.svg" alt="Camino dorado con hitos: la hoja de ruta" />
+          <img src="/img/fase-hoja-ruta.svg" alt="Camino azul con hitos: la hoja de ruta" />
           <div>
-            <p style={{ marginBottom: 12 }}>
-              <strong>Fase 1 · Diagnóstico con IA.</strong> La plataforma lee tus
-              documentos y detecta brechas, necesidades y oportunidades en
-              minutos, cada hallazgo trazado a su documento de origen.
-            </p>
-            <p style={{ marginBottom: 12 }}>
-              <strong>Fase 2 · Hoja de ruta.</strong> Los expertos validan el
-              diagnóstico y construyen el plan priorizado por impacto y esfuerzo.
+            <p style={{ marginBottom: 10 }}>
+              <strong>Diagnóstico con IA</strong> en minutos, cada hallazgo
+              trazado a su documento de origen.
             </p>
             <p>
-              <strong>Fase 3 · Seguimiento.</strong> KPIs, asesoría continua y
-              evaluación periódica hasta que la mejora sea sostenible.
+              <strong>Plan priorizado</strong> por impacto y esfuerzo, con
+              seguimiento por KPIs.
             </p>
-            <div style={{ marginTop: 16 }}>
-              <Link href="/metodo" className="btn btn-borde">
-                Ver el método en detalle →
+            <div style={{ marginTop: 14, display: "flex", gap: 10, flexWrap: "wrap" }}>
+              <Link href="/metodo" className="btn btn-borde btn-mini">
+                Ver el método
+              </Link>
+              <Link href="/fases" className="btn btn-borde btn-mini">
+                Ver las 3 fases
               </Link>
             </div>
           </div>
         </div>
       </Section>
 
-      <Section
-        titulo="El problema"
-        subtitulo="Por qué existe SmartGov COBIT"
-      >
+      {/* Más información, sin bloquear: enlaces compactos */}
+      <Section titulo="¿Quieres más detalle?" subtitulo="Todo disponible desde el menú ☰, o directo desde aquí">
         <div className="grid grid-4">
-          {contexto.problema.items.map((g) => (
-            <Card key={g.grupo} titulo={g.grupo}>
-              <ul>
-                {g.puntos.map((p) => (
-                  <li key={p}>{p}</li>
-                ))}
-              </ul>
-            </Card>
-          ))}
-        </div>
-        <ValorList items={contexto.propuestaValor} />
-      </Section>
-
-      <Section titulo="El producto" subtitulo="Consultoría híbrida inteligente en tres fases">
-        <div className="timeline">
-          {producto.fases.map((f) => (
-            <div className="fase" key={f.id}>
-              <div className="fase-num">{f.numero}</div>
-              <div>
-                <h3>{f.titulo}</h3>
-                <p>{f.descripcion}</p>
-                <div className="fase-pasos">
-                  {f.pasos.map((p) => (
-                    <span key={p}>{p}</span>
-                  ))}
-                </div>
-              </div>
-              <Link href={`/fases/${f.id}`} className="fase-link">
-                Ver detalle →
-              </Link>
-            </div>
-          ))}
-        </div>
-        <ValorList items={producto.propuestaValor} />
-      </Section>
-
-      <Section titulo="Para quién" subtitulo="Perfil del cliente">
-        <div className="grid grid-4">
-          {[clientes.segmento, clientes.sectores, clientes.quienDecide, clientes.empresaIdeal].map(
-            (g) => (
-              <Card key={g.titulo} titulo={g.titulo}>
-                <ul>
-                  {g.items.map((p) => (
-                    <li key={p}>{p}</li>
-                  ))}
-                </ul>
-              </Card>
-            )
-          )}
-        </div>
-        <ValorList items={clientes.propuestaValor} />
-      </Section>
-
-      <Section titulo="El proyecto" subtitulo="Privado e intangible">
-        <div className="grid grid-2">
-          {proyecto.esencia.items.map((g) => (
-            <Card key={g.grupo} titulo={g.grupo}>
-              <ul>
-                {g.puntos.map((p) => (
-                  <li key={p}>{p}</li>
-                ))}
-              </ul>
-            </Card>
-          ))}
-          <Card titulo={proyecto.modeloNegocio.titulo}>
+          <Card titulo="Contexto y problema">
             <ul>
-              {proyecto.modeloNegocio.items.map((p) => (
-                <li key={p}>{p}</li>
-              ))}
+              <li>Por qué existe la plataforma</li>
+              <li><Link href="/contexto">Leer →</Link></li>
             </ul>
           </Card>
-          <Card titulo="Equipo">
+          <Card titulo="Casos ilustrativos">
             <ul>
-              {proyecto.equipo.unidades.map((u) => (
-                <li key={u.nombre}>
-                  <strong>{u.nombre}:</strong> {u.descripcion}
-                </li>
-              ))}
+              <li>3 escenarios del sector real</li>
+              <li><Link href="/casos">Ver →</Link></li>
+            </ul>
+          </Card>
+          <Card titulo="Glosario COBIT">
+            <ul>
+              <li>15 términos en lenguaje sencillo</li>
+              <li><Link href="/glosario">Consultar →</Link></li>
+            </ul>
+          </Card>
+          <Card titulo="Preguntas frecuentes">
+            <ul>
+              <li>Las 10 de siempre, respondidas</li>
+              <li><Link href="/preguntas">Ver →</Link></li>
             </ul>
           </Card>
         </div>
-        <ValorList items={proyecto.propuestaValor} />
       </Section>
 
       <CtaFinal
-        texto="¿Listo para pasar de 6 semanas de consultoría a un diagnóstico en horas?"
-        ctaHref="/contexto"
-        ctaTexto="Siguiente paso: entender el problema →"
+        texto="¿Listo para ver la plataforma en acción?"
+        ctaHref="/diagnostico"
+        ctaTexto="▶ Probar la demo"
       />
     </>
   );
