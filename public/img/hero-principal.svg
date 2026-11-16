@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="fondo" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#eaf2fd"/>
+      <stop offset="60%" stop-color="#fdfdfe"/>
+      <stop offset="100%" stop-color="#f4f8fe"/>
+    </radialGradient>
+    <linearGradient id="azul" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
+    </linearGradient>
+    <filter id="brillo" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="600" fill="url(#fondo)"/>
+
+  <!-- arcos sutiles -->
+  <circle cx="800" cy="700" r="480" fill="none" stroke="url(#azul)" stroke-opacity="0.22" stroke-width="1.2"/>
+  <circle cx="800" cy="700" r="600" fill="none" stroke="url(#azul)" stroke-opacity="0.13" stroke-width="1"/>
+  <circle cx="800" cy="700" r="720" fill="none" stroke="url(#azul)" stroke-opacity="0.08" stroke-width="1"/>
+
+  <!-- red de líneas azules -->
+  <g stroke="url(#azul)" stroke-opacity="0.6" stroke-width="1.4" fill="none">
+    <path d="M180 460 L400 320 L640 400 L860 260 L1100 340 L1330 210"/>
+    <path d="M240 260 L400 320 L480 170 L700 210 L860 260 L1010 150 L1240 240 L1330 210"/>
+    <path d="M300 520 L500 480 L640 400 L830 470 L1010 420 L1240 480"/>
+    <path d="M640 400 L700 210"/>
+    <path d="M860 260 L830 470"/>
+    <path d="M1100 340 L1010 420"/>
+  </g>
+
+  <!-- nodos -->
+  <g fill="url(#azul)" filter="url(#brillo)">
+    <circle cx="400" cy="320" r="6"/>
+    <circle cx="860" cy="260" r="8"/>
+    <circle cx="1100" cy="340" r="6"/>
+    <circle cx="640" cy="400" r="5"/>
+    <circle cx="1010" cy="420" r="5"/>
+    <circle cx="1330" cy="210" r="6"/>
+    <circle cx="480" cy="170" r="4"/>
+  </g>
+  <g fill="#101828" opacity="0.75">
+    <circle cx="240" cy="260" r="3"/>
+    <circle cx="700" cy="210" r="3"/>
+    <circle cx="1240" cy="480" r="3"/>
+    <circle cx="1010" cy="150" r="3"/>
+    <circle cx="300" cy="520" r="3"/>
+  </g>
+
+  <!-- destellos -->
+  <g stroke="url(#azul)" stroke-opacity="0.45" stroke-width="1">
+    <path d="M140 140 H220 M180 100 V180"/>
+    <path d="M1420 120 H1480 M1450 90 V150"/>
+    <path d="M1360 480 H1420 M1390 450 V510"/>
+  </g>
+</svg>

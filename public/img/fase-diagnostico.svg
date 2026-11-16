@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="azul" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
+    </linearGradient>
+    <linearGradient id="haz" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.28"/>
+    </linearGradient>
+    <radialGradient id="fondo" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#eaf2fd"/>
+      <stop offset="100%" stop-color="#fafbfd"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#fondo)"/>
+
+  <!-- haces de escaneo -->
+  <rect x="255" y="60" width="34" height="330" fill="url(#haz)"/>
+  <rect x="383" y="60" width="34" height="330" fill="url(#haz)"/>
+  <rect x="511" y="60" width="34" height="330" fill="url(#haz)"/>
+
+  <!-- documentos apilados -->
+  <g>
+    <rect x="200" y="150" width="180" height="240" rx="8" fill="#eef4fd" stroke="url(#azul)" stroke-width="1.5" transform="rotate(-6 290 270)"/>
+    <rect x="230" y="130" width="180" height="240" rx="8" fill="#f5f9ff" stroke="url(#azul)" stroke-width="1.5" transform="rotate(3 320 250)"/>
+    <rect x="262" y="118" width="180" height="240" rx="8" fill="#ffffff" stroke="url(#azul)" stroke-width="2"/>
+
+    <!-- líneas de texto -->
+    <g stroke="#9db1cc" stroke-width="2" stroke-linecap="round">
+      <line x1="286" y1="150" x2="410" y2="150"/>
+      <line x1="286" y1="175" x2="418" y2="175"/>
+      <line x1="286" y1="200" x2="395" y2="200"/>
+      <line x1="286" y1="225" x2="418" y2="225"/>
+      <line x1="286" y1="250" x2="370" y2="250"/>
+      <line x1="286" y1="275" x2="410" y2="275"/>
+      <line x1="286" y1="300" x2="385" y2="300"/>
+    </g>
+
+    <!-- hallazgos marcados -->
+    <g fill="#2563eb">
+      <circle cx="280" cy="200" r="5"/>
+      <circle cx="280" cy="250" r="5"/>
+      <circle cx="280" cy="300" r="5"/>
+    </g>
+  </g>
+
+  <!-- sello de IA -->
+  <g transform="translate(560 180)">
+    <circle r="46" fill="none" stroke="url(#azul)" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle r="34" fill="rgba(37,99,235,0.07)" stroke="url(#azul)" stroke-width="1.5"/>
+    <g stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" fill="none">
+      <path d="M-16 10 L-16 -6 L0 -18 L16 -6 L16 10"/>
+      <path d="M-8 10 V0 M0 10 V-4 M8 10 V4"/>
+    </g>
+  </g>
+
+  <!-- flecha de datos hacia el sello -->
+  <g stroke="url(#azul)" stroke-width="1.6" fill="none" stroke-dasharray="4 6">
+    <path d="M450 190 C500 170 520 190 512 178"/>
+  </g>
+  <path d="M514 172 l10 4 l-9 7 z" fill="#2563eb"/>
+
+  <!-- base -->
+  <line x1="120" y1="420" x2="680" y2="420" stroke="url(#azul)" stroke-opacity="0.55" stroke-width="1.5"/>
+  <line x1="170" y1="440" x2="630" y2="440" stroke="url(#azul)" stroke-opacity="0.3" stroke-width="1"/>
+</svg>

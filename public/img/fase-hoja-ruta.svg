@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="azul" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
+    </linearGradient>
+    <radialGradient id="fondo" cx="40%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#eaf2fd"/>
+      <stop offset="100%" stop-color="#fafbfd"/>
+    </radialGradient>
+    <filter id="brillo" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#fondo)"/>
+
+  <!-- rejilla tenue -->
+  <g stroke="#2563eb" stroke-opacity="0.13" stroke-width="1">
+    <path d="M0 100 H800 M0 200 H800 M0 300 H800 M0 400 H800"/>
+    <path d="M100 0 V500 M200 0 V500 M300 0 V500 M400 0 V500 M500 0 V500 M600 0 V500 M700 0 V500"/>
+  </g>
+
+  <!-- camino azul -->
+  <path d="M90 440 C220 440 240 360 360 360 C480 360 470 260 580 260 C680 260 690 170 740 120"
+        fill="none" stroke="url(#azul)" stroke-width="5" stroke-linecap="round" filter="url(#brillo)"/>
+  <path d="M90 440 C220 440 240 360 360 360 C480 360 470 260 580 260 C680 260 690 170 740 120"
+        fill="none" stroke="#1d4ed8" stroke-width="1.5" stroke-opacity="0.55" stroke-dasharray="2 10"/>
+
+  <!-- hitos -->
+  <g filter="url(#brillo)">
+    <circle cx="90" cy="440" r="9" fill="#ffffff" stroke="url(#azul)" stroke-width="3"/>
+    <circle cx="360" cy="360" r="9" fill="#ffffff" stroke="url(#azul)" stroke-width="3"/>
+    <circle cx="580" cy="260" r="9" fill="#ffffff" stroke="url(#azul)" stroke-width="3"/>
+  </g>
+  <circle cx="740" cy="120" r="12" fill="url(#azul)" filter="url(#brillo)"/>
+  <g stroke="#ffffff" stroke-width="2" stroke-linecap="round">
+    <path d="M732 120 h16 M740 112 v16"/>
+  </g>
+
+  <!-- horizontes -->
+  <g stroke="#1d4ed8" stroke-opacity="0.45" stroke-width="1.4" stroke-dasharray="3 6">
+    <path d="M60 470 H480"/>
+    <path d="M300 320 H640"/>
+    <path d="M540 210 H780"/>
+  </g>
+  <g fill="#1d4ed8">
+    <circle cx="480" cy="470" r="3"/>
+    <circle cx="640" cy="320" r="3"/>
+    <circle cx="780" cy="210" r="3"/>
+  </g>
+</svg>

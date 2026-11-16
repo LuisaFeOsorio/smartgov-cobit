@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="azul" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <radialGradient id="fondo" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#eaf2fd"/>
+      <stop offset="100%" stop-color="#fafbfd"/>
+    </radialGradient>
+    <filter id="brillo" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#fondo)"/>
+
+  <!-- resplandor tras las figuras -->
+  <ellipse cx="400" cy="260" rx="300" ry="200" fill="#2563eb" opacity="0.06"/>
+
+  <!-- figura 1: técnica -->
+  <g filter="url(#brillo)">
+    <path d="M180 380 C180 300 220 270 245 270 C270 270 310 300 310 380 Z"
+          fill="#ffffff" stroke="url(#azul)" stroke-width="2.5"/>
+  </g>
+  <circle cx="245" cy="215" r="38" fill="#ffffff" stroke="url(#azul)" stroke-width="2.5"/>
+
+  <!-- figura 2: consultiva (al centro, más alta) -->
+  <g filter="url(#brillo)">
+    <path d="M330 400 C330 300 380 262 400 262 C420 262 470 300 470 400 Z"
+          fill="#eaf2fd" stroke="url(#azul)" stroke-width="3"/>
+  </g>
+  <circle cx="400" cy="195" r="42" fill="#eaf2fd" stroke="url(#azul)" stroke-width="3"/>
+  <g stroke="#2563eb" stroke-width="1.5">
+    <line x1="400" y1="135" x2="400" y2="118"/>
+    <line x1="370" y1="142" x2="360" y2="128"/>
+    <line x1="430" y1="142" x2="440" y2="128"/>
+  </g>
+
+  <!-- figura 3: administrativa -->
+  <g filter="url(#brillo)">
+    <path d="M490 380 C490 300 530 270 555 270 C580 270 620 300 620 380 Z"
+          fill="#ffffff" stroke="url(#azul)" stroke-width="2.5"/>
+  </g>
+  <circle cx="555" cy="215" r="38" fill="#ffffff" stroke="url(#azul)" stroke-width="2.5"/>
+
+  <!-- bases -->
+  <line x1="120" y1="405" x2="680" y2="405" stroke="url(#azul)" stroke-opacity="0.5" stroke-width="1.5"/>
+  <line x1="160" y1="425" x2="640" y2="425" stroke="url(#azul)" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- destellos -->
+  <g stroke="url(#azul)" stroke-opacity="0.5" stroke-width="1">
+    <path d="M120 120 H180 M150 90 V150"/>
+    <path d="M640 110 H690 M665 85 V135"/>
+  </g>
+</svg>
